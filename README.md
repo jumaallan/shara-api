@@ -9,7 +9,7 @@ This is a sample Shara API that perform the following actions:
 
 ## Setup
 
-To run the setup offline, run the following command - make sure you setup a .env file with your configs
+To run the setup offline, run the following command - make sure you setup a `.env` file with your configs
 
 ```bash
 adonis serve --dev
