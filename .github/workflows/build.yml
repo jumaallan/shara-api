@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Make envfile
-          uses: Shara/create-envfile@v1
+          uses: SpicyPizza/create-envfile@v1
           with:
             envkey_HOST: 127.0.0.1
             envkey_PORT: 3333
