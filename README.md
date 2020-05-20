@@ -1,23 +1,19 @@
-# Adonis API application
+# Shara API
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+This is a sample Shara API that perform the following actions: 
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+1. Authentication - Register and Login
+2. Create and Manage Orders
+3. Send notifications - Email (Amazon SES) and SMS (Twillio)
+4. Admin Dashboard
 
 ## Setup
 
-Use the adonis command to install the blueprint
+To run the setup offline, run the following command - make sure you setup a .env file with your configs
 
 ```bash
-adonis new yardstick --api-only
+adonis serve --dev
 ```
-
-or manually clone the repo and then run `npm install`.
-
 
 ### Migrations
 
