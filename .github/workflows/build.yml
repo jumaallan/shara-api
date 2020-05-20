@@ -19,6 +19,24 @@ jobs:
         node-version: [12.x]
 
     steps:
+      - name: Make envfile
+          uses: Shara/create-envfile@v1
+          with:
+            envkey_HOST: 127.0.0.1
+            envkey_PORT: 3333
+            envkey_NODE_ENV: development
+            envkey_APP_NAME: Shara
+            envkey_APP_URL: http://${HOST}:${PORT}
+            envkey_CACHE_VIEWS:
+            envkey_APP_KEY:
+            envkey_DB_CONNECTION: pg
+            envkey_DB_HOST: 127.0.0.1
+            envkey_DB_PORT: 5432
+            envkey_DB_USER: postgres
+            envkey_DB_PASSWORD: postgres
+            envkey_DB_DATABASE: shara
+            envkey_HASH_DRIVER: bcrypt
+            file_name: .env
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
