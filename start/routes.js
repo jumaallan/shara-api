@@ -19,3 +19,11 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.group(() => {
+  Route.post('order', 'OrderController.store')
+  Route.get('order', 'OrderController.index')
+  Route.get('order/:id', 'OrderController.show')
+  Route.put('order/:id', 'OrderController.update')
+  Route.delete('order/:id', 'OrderController.delete')
+}).prefix('api/v1')
