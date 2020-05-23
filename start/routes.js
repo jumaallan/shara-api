@@ -26,14 +26,10 @@ Route.group(() => {
   Route.post('order', 'OrderController.store')
   Route.get('order', 'OrderController.index')
   Route.get('order/:id', 'OrderController.show')
-  Route.put('order/:id', 'OrderController.update')
-  Route.delete('order/:id', 'OrderController.delete')
 
   // grouping anything product here
   Route.post('product', 'ProductController.store')
   Route.get('product', 'ProductController.index')
   Route.get('product/:id', 'ProductController.show')
-  Route.put('product/:id', 'ProductController.update')
-  Route.delete('product/:id', 'ProductController.delete')
 
 }).prefix('api/v1')
