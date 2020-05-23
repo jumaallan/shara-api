@@ -27,13 +27,16 @@ Route.group(() => {
   Route.post('/login', 'UserController.login')
 
   // grouping anything order here
-  Route.post('order', 'OrderController.store')
-  Route.get('order', 'OrderController.index')
-  Route.get('order/:id', 'OrderController.show')
+  Route.post('order', 'OrderController.store').middleware('auth')
+  Route.get('order', 'OrderController.index').middleware('auth')
+  Route.get('order/:id', 'OrderController.show').middleware('auth')
 
   // grouping anything product here
-  Route.post('product', 'ProductController.store')
-  Route.get('product', 'ProductController.index')
-  Route.get('product/:id', 'ProductController.show')
+  Route.post('product', 'ProductController.store').middleware('auth')
+  Route.get('product', 'ProductController.index').middleware('auth')
+  Route.get('product/:id', 'ProductController.show').middleware('auth')
+
+  // fetch all orders, and their associated products
+  Route.get('order/products', 'OrderProductController.show').middleware('auth')
 
 }).prefix('api/v1')
