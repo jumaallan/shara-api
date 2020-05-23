@@ -17,10 +17,14 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return { welcome: 'Welcome to Shara API' }
+  return {welcome: 'Welcome to Shara API'}
 })
 
 Route.group(() => {
+
+  // user authentication - login && register
+  Route.post('/register', 'UserController.signup')
+  Route.post('/login', 'UserController.login')
 
   // grouping anything order here
   Route.post('order', 'OrderController.store')
