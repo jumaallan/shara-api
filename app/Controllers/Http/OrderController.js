@@ -14,8 +14,9 @@ class OrderController {
     return response.json(order)
   }
 
-  async store({request, response}) {
-    const orderInfo = request.only(['order_number', 'user_id'])
+  async store({request, auth, response}) {
+
+    const orderInfo = request.only(['order_number', auth.current.user.id])
 
     const order = new Order()
     order.order_number = orderInfo.order_number
