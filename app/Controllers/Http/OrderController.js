@@ -15,13 +15,11 @@ class OrderController {
   }
 
   async store({request, response}) {
-    const orderInfo = request.only(['product', 'name', 'price', 'amount'])
+    const orderInfo = request.only(['order_number', 'user_id'])
 
     const order = new Order()
-    order.product = orderInfo.product
-    order.name = orderInfo.name
-    order.price = orderInfo.price
-    order.amount = orderInfo.amount
+    order.order_number = orderInfo.order_number
+    order.user_id = orderInfo.user_id
 
     await order.save()
 
@@ -29,7 +27,7 @@ class OrderController {
   }
 
   async update({params, request, response}) {
-    const orderInfo = request.only(['product', 'name', 'price', 'amount'])
+    const orderInfo = request.only(['order_number', 'user_id'])
 
     const order = await Order.find(params.id)
     if (!order) {
