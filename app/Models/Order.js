@@ -8,9 +8,13 @@ class Order extends Model {
     return 'orders'
   }
 
-  static get primaryKey () {
+  static get primaryKey() {
     return 'id'
   }
 }
 
 module.exports = Order
+
+// products () {
+//   return this.hasMany('App/Models/Product')
+// }
