@@ -12,6 +12,9 @@ This is a sample Shara API that perform the following actions:
 To run the setup offline, run the following command - make sure you setup a `.env` file with your configs
 
 ```bash
+
+adonis key:generate
+
 adonis serve --dev
 ```
 
@@ -20,5 +23,5 @@ adonis serve --dev
 Run the following command to run startup migrations.
 
 ```js
-adonis migration:run
+adonis run
 ```
