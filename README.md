@@ -13,6 +13,8 @@ To run the setup offline, run the following command - make sure you setup a `.en
 
 ```bash
 
+adonis migration:run
+
 adonis key:generate
 
 adonis serve --dev
