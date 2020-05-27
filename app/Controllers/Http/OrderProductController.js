@@ -1,8 +1,6 @@
 'use strict'
 
 const Order = use('App/Models/Order')
-const Product = use('App/Models/Product')
-const User = use('App/Models/User')
 
 class OrderProductController {
 
