@@ -6,23 +6,19 @@ const User = use('App/Models/User')
 
 class OrderProductController {
 
-  async show({auth, response}) {
+  async index({response}) {
 
-    let orders = await Order.all()
+    const orders = await Order.all()
+    const products = []
+
+    for (let order of orders) {
+      const orderProducts = await order.product().fetch()
+      products.push(orderProducts)
+    }
+
     return response.json(orders)
   }
 
 }
 
 module.exports = OrderProductController
-
-
-  [
-  {
-    "id": 1,
-    "user_id": 1,
-    "order_number": "0001",
-    "created_at": "2020-05-26 22:23:14",
-    "updated_at": "2020-05-26 22:23:14"
-  }
-  ]
