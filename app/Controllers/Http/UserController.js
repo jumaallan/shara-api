@@ -18,7 +18,7 @@ class UserController {
     } catch (error) {
       return response.status(400).json({
         status: 'error',
-        message: 'There was a problem creating the user, please try again later.'
+        message: error.message
       })
     }
   }
