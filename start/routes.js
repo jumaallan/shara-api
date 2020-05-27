@@ -37,6 +37,6 @@ Route.group(() => {
   Route.get('product/:id', 'ProductController.show').middleware('auth')
 
   // fetch all orders, and their associated products
-  Route.get('order/products', 'OrderProductController.show').middleware('auth')
+  Route.get('history', 'OrderProductController.index').middleware('auth')
 
 }).prefix('api/v1')
