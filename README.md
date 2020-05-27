@@ -4,7 +4,7 @@ This is a sample Shara API that perform the following actions:
 
 1. Authentication - Register and Login
 2. Create and Manage Orders
-3. Send notifications - Email (Amazon SES) and SMS (Twillio)
+3. Send notifications - Email (Amazon SES) and SMS (Twilio)
 4. Admin Dashboard
 
 ## Setup

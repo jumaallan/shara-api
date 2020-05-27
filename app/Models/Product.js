@@ -19,7 +19,3 @@ class Product extends Model {
 }
 
 module.exports = Product
-
-// order () {
-//   return this.belongsTo('App/Models/Order')
-// }

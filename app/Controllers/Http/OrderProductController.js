@@ -8,13 +8,10 @@ class OrderProductController {
 
   async index({response}) {
 
-    const orders = await Order.all()
-    const products = []
-
-    for (let order of orders) {
-      const orderProducts = await order.product().fetch()
-      products.push(orderProducts)
-    }
+    const orders = await Order
+      .query()
+      .with('product')
+      .fetch()
 
     return response.json(orders)
   }

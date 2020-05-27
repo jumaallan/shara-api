@@ -6,7 +6,7 @@ const Model = use('Model')
 class Order extends Model {
 
   product() {
-    return this.belongsToMany('App/Models/Product')
+    return this.hasMany('App/Models/Product')
   }
 
   static get table() {
