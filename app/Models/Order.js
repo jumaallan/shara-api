@@ -4,7 +4,12 @@
 const Model = use('Model')
 
 class Order extends Model {
-  static get table () {
+
+  product() {
+    return this.belongsToMany('App/Models/Product')
+  }
+
+  static get table() {
     return 'orders'
   }
 
