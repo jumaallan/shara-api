@@ -7,6 +7,8 @@ This is a sample Shara API that perform the following actions:
 3. Send notifications - Email (Amazon SES) and SMS (Twilio)
 4. Admin Dashboard
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1b1635bef9083f5d63a4)
+
 ## Setup
 
 To run the setup offline, run the following command - make sure you setup a `.env` file with your configs
