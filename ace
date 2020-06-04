@@ -20,4 +20,3 @@ new Ignitor(require('@adonisjs/fold'))
   .fireAce()
   .catch(console.error)
 
-./ace twilio:config

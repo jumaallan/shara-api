@@ -1,6 +1,7 @@
 'use strict'
 
 const Order = use('App/Models/Order')
+const Twilio = use('Adonis/Addons/Twilio')
 
 class OrderController {
 
@@ -23,6 +24,13 @@ class OrderController {
     order.user_id = orderInfo.user_id
 
     await order.save()
+
+    // send message to the user
+    Twilio.sendMessage('+254797435901', 'Hello from Node', function (err, response) {
+      console.log(err, response);
+    })
+
+    // send email via Amazon SES
 
     return response.status(201).json(order)
   }
