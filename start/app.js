@@ -15,8 +15,7 @@ const providers = [
   '@adonisjs/auth/providers/AuthProvider',
   '@adonisjs/bodyparser/providers/BodyParserProvider',
   '@adonisjs/cors/providers/CorsProvider',
-  '@adonisjs/lucid/providers/LucidProvider',
-  'adonis-twilio/providers/TwilioProvider'
+  '@adonisjs/lucid/providers/LucidProvider'
 ]
 
 /*
@@ -29,8 +28,7 @@ const providers = [
 |
 */
 const aceProviders = [
-  '@adonisjs/lucid/providers/MigrationsProvider',
-  'adonis-twilio/providers/CommandsProvider'
+  '@adonisjs/lucid/providers/MigrationsProvider'
 ]
 
 /*
@@ -45,9 +43,7 @@ const aceProviders = [
 |   { Route: 'Adonis/Src/Route' }
 |
 */
-const aliases = {
-  Twilio: 'Adonis/Addons/Twilio'
-}
+const aliases = {}
 
 /*
 |--------------------------------------------------------------------------
@@ -57,8 +53,6 @@ const aliases = {
 | Here you store ace commands for your package
 |
 */
-const commands = [
-  'Adonis/Commands/Twilio:Config'
-]
+const commands = []
 
 module.exports = { providers, aceProviders, aliases, commands }
