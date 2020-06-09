@@ -25,10 +25,10 @@ class OrderController {
 
     await order.save()
 
-    // send message to the user
-    Twilio.sendMessage('+254797435901', 'Hello from Node', function (err, response) {
-      console.log(err, response);
-    })
+    // // send message to the user
+    // Twilio.sendMessage('+254797435901', 'Hello from Node', function (err, response) {
+    //   console.log(err, response);
+    // })
 
     // send email via Amazon SES
 
