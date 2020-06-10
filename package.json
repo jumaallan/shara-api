@@ -20,14 +20,17 @@
     "@adonisjs/ace": "^5.0.8",
     "@adonisjs/auth": "^3.0.7",
     "@adonisjs/bodyparser": "^2.0.5",
-    "@adonisjs/cli": "^4.0.12",
+    "@adonisjs/cli": "^5.0.9",
     "@adonisjs/cors": "^1.0.7",
     "@adonisjs/fold": "^4.0.9",
     "@adonisjs/framework": "^5.0.9",
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
+    "adonis-fold": "^3.0.3",
     "adonis-twilio": "^0.1.0",
-    "pg": "^8.2.1"
+    "adonis-twilio-provider": "^2.0.0",
+    "pg": "^8.2.1",
+    "twilio": "^3.45.0"
   },
   "devDependencies": {},
   "autoload": {

@@ -1,7 +1,10 @@
 'use strict'
 
 const Order = use('App/Models/Order')
-const Twilio = use('Adonis/Addons/Twilio')
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 
 class OrderController {
 
@@ -25,10 +28,14 @@ class OrderController {
 
     await order.save()
 
-    // // send message to the user
-    // Twilio.sendMessage('+254797435901', 'Hello from Node', function (err, response) {
-    //   console.log(err, response);
-    // })
+    // send message to the user
+    client.messages
+      .create({
+        body: 'Your Order has been saved successfully',
+        from: process.env.TWILIO_FROM,
+        to: '+254797435901'
+      })
+      .then(message => console.log(message.sid));
 
     // send email via Amazon SES
 
