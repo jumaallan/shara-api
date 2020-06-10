@@ -31,7 +31,7 @@ class OrderController {
     // send message to the user
     client.messages
       .create({
-        body: 'Your Order has been saved successfully',
+        body: 'Your Order # ' + order.order_number + ' has been saved successfully',
         from: process.env.TWILIO_FROM,
         to: '+254797435901'
       })
