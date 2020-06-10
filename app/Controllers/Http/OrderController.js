@@ -20,26 +20,33 @@ class OrderController {
 
   async store({request, auth, response}) {
 
-    const orderInfo = request.only(['order_number', auth.current.user.id])
+    const orderInfo = request.only(['order_number'])
 
-    const order = new Order()
-    order.order_number = orderInfo.order_number
-    order.user_id = orderInfo.user_id
+    try {
+      let user = await auth.getUser()
 
-    await order.save()
+      const order = new Order()
+      order.order_number = orderInfo.order_number
+      order.user_id = user.id
 
-    // send message to the user
-    client.messages
-      .create({
-        body: 'Your Order # ' + order.order_number + ' has been saved successfully',
-        from: process.env.TWILIO_FROM,
-        to: '+254797435901'
-      })
-      .then(message => console.log(message.sid));
+      await order.save()
 
-    // send email via Amazon SES
+      // send message to the user
+      client.messages
+        .create({
+          body: 'Hi ' + user.name + '. Your Order # ' + order.order_number + ' has been saved successfully',
+          from: process.env.TWILIO_FROM,
+          to: user.phone_number
+        })
+        .then(message => console.log(message.sid));
 
-    return response.status(201).json(order)
+      // send email via Amazon SES
+
+      return response.status(201).json(order)
+
+    } catch (e) {
+      console.log('Token invalid')
+    }
   }
 
 }
