@@ -19,7 +19,3 @@ class Order extends Model {
 }
 
 module.exports = Order
-
-// products () {
-//   return this.hasMany('App/Models/Product')
-// }
