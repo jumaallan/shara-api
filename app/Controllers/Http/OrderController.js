@@ -40,8 +40,6 @@ class OrderController {
         })
         .then(message => console.log(message.sid));
 
-      // send email via Amazon SES
-
       return response.status(201).json(order)
 
     } catch (e) {
